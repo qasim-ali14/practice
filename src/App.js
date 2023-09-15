@@ -8,6 +8,7 @@ function App() {
  }  
   return (//this is jsx part in this we write internal html.and javascript.
     <div className="App">
+      {/* ////example of js. */}
    <h1> enter text</h1>
       <input
        type='text'
