@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
 
+import { useState } from 'react';
+import Sho from './show/Sho'
 function App() {
-  return (
+ const [ab,setcount]=useState(0);//in this object count variable hold value intialixz with a zero
+ //setcount is fucntion by this we can change the value of avariable 
+ function increment(){//basically with state we can chnage the internal data of component. 
+  setcount(ab+1);
+ }  
+  return (//this is jsx part in this we write internal html.
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+   <h1> your are no {ab}</h1>
+      <Sho />
+      <Sho name='ahmed'/>
+      <Sho name='ali'/>
+      <button onClick={increment}>increment </button>
     </div>
   );
 }
