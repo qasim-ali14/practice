@@ -7,7 +7,7 @@ function App() {
  function increment(){//basically with state we can chnage the internal data of component. 
   setcount(ab+1);
  }  
-  return (//this is jsx part in this we write internal html.
+  return (//this is jsx part in this we write internal html.and js.
     <div className="App">
    <h1> your are no {ab}</h1>
       <Sho />
