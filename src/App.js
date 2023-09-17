@@ -1,28 +1,35 @@
+import {useEffect, useRef, useState} from 'react'
 
-import { useEffect, useState } from 'react';
-function App() {
- const [ab,setcount]=useState('');//in this object count variable hold value intialixz with a zero
- //setcount is fucntion by this we can change the value of avariable 
- const sethandler=(e)=>{//basically with state we can chnage the internal data of component. 
-  setcount(e.target.value);
- }  
- useEffect(()=>{
-  console.log("mounted");//it manages use state hook and handle side effect or function.
- },[ab])
-  return (//this is jsx part in this we write internal html.and javascript.
-    <div className="App">
-      {/* ////example of js. */}
-   <h1> enter text</h1>
-      <input
-       type='text'
-       value={ab}
-       onChange={sethandler}
-       placeholder='type something'
-       />
-       <p>your type{ab}</p>
+ function App() {
+  const [state,setstate]=useState('qasim');
+  useEffect(()=>{
+    console.log("mounted");
+  },[state]);
+const refelement=useRef('null');//we can manipulate dom in some cse props or state not helpfull
+function reset(){
+  setstate('');
+  refelement.current.focus();
+   
 
-    </div>
-  );
 }
+function handleinput(){
+   refelement.current.style.color='white';
 
+}
+  return (
+    <div>
+      <h1>qasim</h1>
+      <input 
+      ref={refelement}//
+      type="text" 
+      value={state}
+      onChange={(e)=>{
+          setstate(e.target.value)
+       }}
+      />
+      <button onClick={reset}>Reset</button>
+      <button onClick={handleinput}>color change</button>
+    </div>
+  )
+}
 export default App;
