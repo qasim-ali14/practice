@@ -7,7 +7,7 @@ function App() {
   setcount(e.target.value);
  }  
  useEffect(()=>{
-  console.log("mounted");//it manage use state hook and handle side effect or function.
+  console.log("mounted");//it manages use state hook and handle side effect or function.
  },[ab])
   return (//this is jsx part in this we write internal html.and javascript.
     <div className="App">
