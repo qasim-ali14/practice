@@ -1,11 +1,14 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 function App() {
  const [ab,setcount]=useState('');//in this object count variable hold value intialixz with a zero
  //setcount is fucntion by this we can change the value of avariable 
  const sethandler=(e)=>{//basically with state we can chnage the internal data of component. 
   setcount(e.target.value);
  }  
+ useEffect(()=>{
+  console.log("mounted");//it manage use state hook and handle side effect or function.
+ },[ab])
   return (//this is jsx part in this we write internal html.and javascript.
     <div className="App">
       {/* ////example of js. */}
